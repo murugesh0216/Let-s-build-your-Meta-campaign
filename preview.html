@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Let's Build Your Meta Campaign | Murugesh</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            heading: "#111111",
+            body: "#444444",
+            border: "#D9D9D9",
+            accent: "#F4C430",
+            red: "#C62828",
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(14px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .fade-up {
+      animation: fadeUp 0.6s ease-out both;
+    }
+
+    .delay-1 {
+      animation-delay: 100ms;
+    }
+
+    .delay-2 {
+      animation-delay: 180ms;
+    }
+
+    .custom-input {
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .custom-input:focus {
+      outline: none;
+      border-color: #F4C430;
+      box-shadow: 0 0 0 3px rgba(244, 196, 48, 0.12);
+    }
+
+    .budget-input:checked + label {
+      background: #F4C430;
+      border-color: #F4C430;
+      color: #111111;
+    }
+
+    .budget-label {
+      transition: all 0.2s ease;
+    }
+
+    .budget-label:hover {
+      border-color: #F4C430;
+    }
+
+    .submit-btn {
+      transition: transform 0.2s ease, background-color 0.2s ease;
+    }
+
+    .submit-btn:hover {
+      background: #222222;
+      transform: translateY(-1px);
+    }
+
+    .submit-btn:active {
+      transform: translateY(0);
+    }
+  </style>
+</head>
+
+<body class="bg-white text-[#444444] antialiased">
+
+  <main class="min-h-screen flex items-center justify-center px-5 py-16 md:py-24">
+
+    <div class="w-full max-w-5xl">
+
+      <!-- Header -->
+      <section class="max-w-2xl mb-12 fade-up">
+
+        <div class="flex items-center gap-3 mb-5">
+          <span class="w-2 h-2 rounded-full bg-[#F4C430]"></span>
+
+          <span class="text-xs font-semibold uppercase tracking-[0.2em] text-[#444444]">
+            Meta Ads
+          </span>
+        </div>
+
+        <h1 class="text-4xl md:text-6xl font-semibold tracking-tight leading-[1.05] text-[#111111]">
+          Let's build your
+          <span class="text-[#444444]">
+            Meta campaign.
+          </span>
+        </h1>
+
+        <p class="mt-6 text-lg text-[#444444]">
+          Need help with
+          <span class="font-medium text-[#111111]">
+            Facebook & Instagram Ads?
+          </span>
+        </p>
+
+        <p class="mt-3 text-sm text-[#444444]">
+          I work with businesses investing
+          <strong class="text-[#111111]">₹4L+ per month</strong>
+          in Meta Ads.
+        </p>
+
+      </section>
+
+
+      <!-- Main Grid -->
+      <div class="grid lg:grid-cols-3 gap-10 lg:gap-16">
+
+        <!-- Left Content -->
+        <section class="fade-up delay-1">
+
+          <h2 class="text-xl font-semibold text-[#111111]">
+            Let's talk about your campaign.
+          </h2>
+
+          <p class="mt-4 text-sm leading-7 text-[#444444]">
+            Share a few details about your business and advertising goals.
+            I'll review your requirements before we discuss the next steps.
+          </p>
+
+          <div class="mt-8 pt-7 border-t border-[#D9D9D9] space-y-5">
+
+            <div class="flex items-center gap-3">
+              <span class="w-2 h-2 rounded-full bg-[#F4C430]"></span>
+              <span class="text-sm text-[#111111]">
+                Meta Ads Strategy
+              </span>
+            </div>
+
+            <div class="flex items-center gap-3">
+              <span class="w-2 h-2 rounded-full bg-[#F4C430]"></span>
+              <span class="text-sm text-[#111111]">
+                Campaign Management
+              </span>
+            </div>
+
+            <div class="flex items-center gap-3">
+              <span class="w-2 h-2 rounded-full bg-[#F4C430]"></span>
+              <span class="text-sm text-[#111111]">
+                Performance Optimization
+              </span>
+            </div>
+
+          </div>
+
+        </section>
+
+
+        <!-- Form -->
+        <section class="lg:col-span-2 fade-up delay-2">
+
+          <form id="metaLeadForm" class="space-y-7" novalidate>
+
+            <!-- Name -->
+            <div>
+
+              <label
+                for="name"
+                class="block text-sm font-medium text-[#111111] mb-2"
+              >
+                Name
+              </label>
+
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Enter your name"
+                autocomplete="name"
+                class="custom-input w-full border border-[#D9D9D9] rounded-xl px-4 py-3.5 text-sm text-[#111111] placeholder-[#888888]"
+              />
+
+              <p id="nameError" class="hidden mt-2 text-xs text-[#C62828]">
+                Please enter your name.
+              </p>
+
+            </div>
+
+
+            <!-- Business -->
+            <div>
+
+              <label
+                for="business"
+                class="block text-sm font-medium text-[#111111] mb-2"
+              >
+                Business / Brand
+              </label>
+
+              <input
+                type="text"
+                id="business"
+                name="business"
+                placeholder="Enter your business name"
+                class="custom-input w-full border border-[#D9D9D9] rounded-xl px-4 py-3.5 text-sm text-[#111111] placeholder-[#888888]"
+              />
+
+              <p id="businessError" class="hidden mt-2 text-xs text-[#C62828]">
+                Please enter your business or brand name.
+              </p>
+
+            </div>
+
+
+            <!-- WhatsApp / Phone -->
+            <div>
+
+              <label
+                for="phone"
+                class="block text-sm font-medium text-[#111111] mb-2"
+              >
+                WhatsApp / Phone
+              </label>
+
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                placeholder="Enter your number"
+                autocomplete="tel"
+                class="custom-input w-full border border-[#D9D9D9] rounded-xl px-4 py-3.5 text-sm text-[#111111] placeholder-[#888888]"
+              />
+
+              <p id="phoneError" class="hidden mt-2 text-xs text-[#C62828]">
+                Please enter a valid phone number.
+              </p>
+
+            </div>
+
+
+            <!-- Monthly Ad Spend -->
+            <div>
+
+              <p class="text-sm font-medium text-[#111111] mb-3">
+                Monthly Ad Spend
+              </p>
+
+              <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+
+                <div>
+                  <input
+                    type="radio"
+                    name="budget"
+                    id="budget1"
+                    value="₹50K–₹1L"
+                    class="budget-input hidden"
+                  />
+
+                  <label
+                    for="budget1"
+                    class="budget-label block cursor-pointer text-center border border-[#D9D9D9] rounded-xl px-4 py-3.5 text-sm text-[#444444]"
+                  >
+                    ₹50K–₹1L
+                  </label>
+                </div>
+
+
+                <div>
+                  <input
+                    type="radio"
+                    name="budget"
+                    id="budget2"
+                    value="₹1L–₹3L"
+                    class="budget-input hidden"
+                  />
+
+                  <label
+                    for="budget2"
+                    class="budget-label block cursor-pointer text-center border border-[#D9D9D9] rounded-xl px-4 py-3.5 text-sm text-[#444444]"
+                  >
+                    ₹1L–₹3L
+                  </label>
+                </div>
+
+
+                <div>
+                  <input
+                    type="radio"
+                    name="budget"
+                    id="budget3"
+                    value="₹3L–₹5L"
+                    class="budget-input hidden"
+                  />
+
+                  <label
+                    for="budget3"
+                    class="budget-label block cursor-pointer text-center border border-[#D9D9D9] rounded-xl px-4 py-3.5 text-sm text-[#444444]"
+                  >
+                    ₹3L–₹5L
+                  </label>
+                </div>
+
+
+                <div>
+                  <input
+                    type="radio"
+                    name="budget"
+                    id="budget4"
+                    value="₹5L+"
+                    class="budget-input hidden"
+                  />
+
+                  <label
+                    for="budget4"
+                    class="budget-label block cursor-pointer text-center border border-[#D9D9D9] rounded-xl px-4 py-3.5 text-sm text-[#444444]"
+                  >
+                    ₹5L+
+                  </label>
+                </div>
+
+              </div>
+
+              <p id="budgetError" class="hidden mt-2 text-xs text-[#C62828]">
+                Please select your monthly ad spend.
+              </p>
+
+            </div>
+
+
+            <!-- Help -->
+            <div>
+
+              <label
+                for="help"
+                class="block text-sm font-medium text-[#111111] mb-2"
+              >
+                What do you need help with?
+              </label>
+
+              <select
+                id="help"
+                name="help"
+                class="custom-input w-full border border-[#D9D9D9] rounded-xl px-4 py-3.5 text-sm bg-white text-[#111111]"
+              >
+
+                <option value="">
+                  Select an option
+                </option>
+
+                <option>
+                  Launch a new Meta campaign
+                </option>
+
+                <option>
+                  Manage my existing Meta Ads
+                </option>
+
+                <option>
+                  Generate more leads
+                </option>
+
+                <option>
+                  Increase sales
+                </option>
+
+                <option>
+                  Improve campaign performance
+                </option>
+
+                <option>
+                  Not sure — let's discuss
+                </option>
+
+              </select>
+
+            </div>
+
+
+            <!-- Message -->
+            <div>
+
+              <label
+                for="message"
+                class="block text-sm font-medium text-[#111111] mb-2"
+              >
+                Tell me about your campaign
+              </label>
+
+              <textarea
+                id="message"
+                name="message"
+                rows="4"
+                placeholder="Tell me briefly about your business, offer and current advertising challenge..."
+                class="custom-input w-full border border-[#D9D9D9] rounded-xl px-4 py-3.5 text-sm text-[#111111] placeholder-[#888888] resize-none"
+              ></textarea>
+
+            </div>
+
+
+            <!-- CTA -->
+            <div class="pt-2">
+
+              <button
+                type="submit"
+                class="submit-btn group inline-flex items-center justify-center gap-3 bg-[#111111] text-white px-7 py-4 rounded-xl text-sm font-medium"
+              >
+
+                TALK WITH ME
+
+                <span class="text-[#F4C430] text-lg transition-transform duration-200 group-hover:translate-x-1">
+                  →
+                </span>
+
+              </button>
+
+              <p class="mt-4 text-xs text-[#444444]">
+                Your details will be reviewed before we discuss the next steps.
+              </p>
+
+            </div>
+
+          </form>
+
+
+          <!-- Success -->
+          <div
+            id="successMessage"
+            class="hidden mt-8 border border-[#D9D9D9] rounded-xl p-6 bg-[#FAFAFA]"
+          >
+
+            <div class="flex items-start gap-4">
+
+              <div class="flex items-center justify-center w-8 h-8 rounded-full bg-[#F4C430] text-[#111111] font-bold">
+                ✓
+              </div>
+
+              <div>
+
+                <h3 class="font-semibold text-lg text-[#111111]">
+                  Thanks — I'll be in touch.
+                </h3>
+
+                <p class="mt-2 text-sm text-[#444444]">
+                  Your campaign details have been received.
+                </p>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </section>
+
+      </div>
+
+    </div>
+
+  </main>
+
+
+  <!-- Form Validation -->
+  <script>
+
+    const form = document.getElementById("metaLeadForm");
+    const successMessage = document.getElementById("successMessage");
+
+
+    function showError(id) {
+      document.getElementById(id).classList.remove("hidden");
+    }
+
+
+    function hideError(id) {
+      document.getElementById(id).classList.add("hidden");
+    }
+
+
+    form.addEventListener("submit", function (event) {
+
+      event.preventDefault();
+
+      let valid = true;
+
+
+      // Name
+      const name = document.getElementById("name");
+
+      if (name.value.trim() === "") {
+
+        showError("nameError");
+
+        name.style.borderColor = "#C62828";
+
+        valid = false;
+
+      } else {
+
+        hideError("nameError");
+
+        name.style.borderColor = "#D9D9D9";
+
+      }
+
+
+      // Business
+      const business = document.getElementById("business");
+
+      if (business.value.trim() === "") {
+
+        showError("businessError");
+
+        business.style.borderColor = "#C62828";
+
+        valid = false;
+
+      } else {
+
+        hideError("businessError");
+
+        business.style.borderColor = "#D9D9D9";
+
+      }
+
+
+      // Phone
+      const phone = document.getElementById("phone");
+
+      const phonePattern = /^[0-9+\-\s]{10,15}$/;
+
+      if (!phonePattern.test(phone.value.trim())) {
+
+        showError("phoneError");
+
+        phone.style.borderColor = "#C62828";
+
+        valid = false;
+
+      } else {
+
+        hideError("phoneError");
+
+        phone.style.borderColor = "#D9D9D9";
+
+      }
+
+
+      // Budget
+      const budget = document.querySelector(
+        'input[name="budget"]:checked'
+      );
+
+      if (!budget) {
+
+        showError("budgetError");
+
+        valid = false;
+
+      } else {
+
+        hideError("budgetError");
+
+      }
+
+
+      // Stop if invalid
+      if (!valid) {
+        return;
+      }
+
+
+      // Show success
+      form.classList.add("hidden");
+
+      successMessage.classList.remove("hidden");
+
+      successMessage.scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+      });
+
+    });
+
+  </script>
+
+</body>
+</html>
